@@ -1,0 +1,39 @@
+{
+  "import": {
+    "prefix": "imp",
+    "body": "import ${2:moduleName} from '${1:module}'$0",
+    "description": "Imports entire module statement in ES6 syntax"
+  },
+  "namedFunction": {
+    "prefix": "fn",
+    "body": "const ${1:name} = (${2:params}) => {\n\t${3}\n}",
+    "description": "Creates a named function in ES6 syntax"
+  },
+  "console.log": {
+    "prefix": "clg",
+    "body": "console.log(${0})",
+    "description": "console.log"
+  },
+  "destructingObject": {
+    "prefix": "dco",
+    "body": "const {${2:propertyName}} = ${1:objectToDestruct}",
+    "description": "Creates and assigns a local variable using object destructing"
+  },
+  "vue component": {
+    "prefix": "vue",
+    "body": [
+      "<script setup lang='ts'>",
+      "defineProps({$1})",
+      "</script>",
+      "",
+      "<template>",
+      "\t<div>${2:$TM_FILENAME_BASE}</div>",
+      "</template>",
+      "",
+      "<style scoped>",
+      "$0",
+      "</style>"
+    ],
+    "description": "component vuejs"
+  }
+}

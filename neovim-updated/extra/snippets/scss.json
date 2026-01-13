@@ -1,0 +1,35 @@
+{
+	"Media query": {
+		"prefix": "mq",
+		"body": [
+			"@include responsive(${1:key}) {",
+			"\t$0",
+			"}"
+		],
+		"description": "Log output to import media query"
+	},
+
+	"import @include m": {
+		"prefix": "in",
+		"body": [
+			"@include ${1:mixin}"
+		],
+		"description": "Log output to import media query"
+	},
+
+	"import variable": {
+		"prefix": "imu",
+		"body": [
+			"@use '$0' as *;"
+		],
+		"description": "Log output to @use"
+	},
+
+	"import mixins": {
+		"prefix": "imf",
+		"body": [
+			"@forward '$0';"
+		],
+		"description": "Log output to @forward"
+	}
+}

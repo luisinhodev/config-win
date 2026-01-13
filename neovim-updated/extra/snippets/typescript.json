@@ -1,0 +1,438 @@
+
+{
+  "console.log": {
+    "prefix": "clg",
+    "body": "console.log(${0})",
+    "description": "console.log"
+  },
+  "Print to Etiqueta": {
+    "prefix": "ti",
+    "body": [
+      "<${0:div}/>"
+    ],
+    "description": "Log output to Etiquita"
+  },
+
+  "Print to useAppDispatch": {
+    "prefix": "dispatch",
+    "body": [
+      "const dispatch = useAppDispatch$0()"
+    ],
+    "description": "Log output to useAppDispatch redux-hook"
+  },
+  "Print to useAppSelector": {
+    "prefix": "selector",
+    "body": [
+      "const ${2:select} = useAppSelector$0( state => state.${1:hash} )"
+    ],
+    "description": "Log output to useAppDispatch redux-hook"
+  },
+  "Print to useDispatch": {
+    "prefix": "usedis",
+    "body": [
+      "const dispatch = useDispatch$0()"
+    ],
+    "description": "Log output to useDispatch redux"
+  },
+  "Print to useSelector": {
+    "prefix": "usesel",
+    "body": [
+      "const ${2:select} = useSelector$0( state => state.${1:hash} )"
+    ],
+    "description": "Log output to useDispatch redux"
+  },
+  "Print to styled": {
+    "prefix": "ims",
+    "body": [
+      "import styled from 'styled-components'"
+    ],
+    "description": "Log output to import styled"
+  },
+  "Print to styleComp": {
+    "prefix": "sc",
+    "body": [
+      "export const ${1:name} = styled.${2:hashtag}`",
+      "\t$0",
+      "`"
+    ],
+    "description": "Log output to stylesComponent"
+  },
+  "Print to Etiquita": {
+    "prefix": "te",
+    "body": [
+      "<${1:div}",
+      "\t$0",
+      ">",
+      "\t$2",
+      "</${1}>"
+    ],
+    "description": "Log output to import etiqueta"
+  },
+  "Print to component": {
+    "prefix": "rcom",
+    "body": [
+      "import {} from 'react'",
+      "",
+      "const ${1:$TM_FILENAME_BASE} = ($2) => {",
+      "\treturn (",
+      "\t\t<>",
+      "\t\t\t$0",
+      "\t\t</>",
+      "\t)",
+      "}",
+      "",
+      "export default ${1}"
+    ],
+    "description": "Log output to component"
+  },
+  "Print to com": {
+    "prefix": "scf",
+    "body": [
+      "import {type FC} from 'react'",
+      "",
+      "interface Props {}",
+      "",
+      "export const ${1:$TM_FILENAME_BASE}: FC<Props> = ($2) => {",
+      "\treturn (",
+      "\t\t<>",
+      "\t\t\t<div>${1}$0</div>",
+      "\t\t</>",
+      "\t)",
+      "}"
+    ],
+    "description": "Log output to component"
+  },
+  "Print to useState": {
+    "prefix": "ruse",
+    "body": [
+      "const [ ${1:state}, set${1/(.*)/${1:/capitalize}/} ] = useState$0(${2:initialState})"
+    ],
+    "description": "Log output to useState"
+  },
+  "Print to useEffect": {
+    "prefix": "rusee",
+    "body": [
+      "useEffect$1(() => {",
+      "\t$0",
+      "}, [])"
+    ],
+    "description": "Log output to useEffect"
+  },
+  "Print to describe and test": {
+    "prefix": "desct",
+    "body": [
+      "describe('$1', () => {",
+      "",
+      "\ttest('should $2', () => {",
+      "",
+      "\t\t$0",
+      "",
+      "\t});",
+      "",
+      "})"
+    ],
+    "description": "Log output to describe and test"
+  },
+  "Print to test": {
+    "prefix": "test",
+    "body": [
+      "test('should $1', () => {",
+      "",
+      "\t$0",
+      "",
+      "})"
+    ],
+    "description": "Log output to test"
+  },
+  "export": {
+    "prefix": "exx",
+    "body": "export {${1:moduleName}} from '$0'",
+    "description": "Imports entire module statement in ES6 syntax"
+  },
+  "export *": {
+    "prefix": "ex",
+    "body": "export * from '$0'",
+    "description": "export entire module statement in ES6 syntax"
+  },
+  "import": {
+    "prefix": "imp",
+    "body": "import ${2:moduleName} from '${1:module}'$0",
+    "description": "Imports entire module statement in ES6 syntax"
+  },
+  "importNoModuleName": {
+    "prefix": "imn",
+    "body": "import '${1:module}'$0",
+    "description": "Imports entire module in ES6 syntax without module name"
+  },
+  "importDestructing": {
+    "prefix": "imd",
+    "body": "import { $2 } from '${1:module}'$0",
+    "description": "Imports only a portion of the module in ES6 syntax"
+  },
+  "requireToConst": {
+    "prefix": "req",
+    "body": "const ${1:packageName} = require('${1:package}')$0",
+    "description": "Require a package to const"
+  },
+  "exportNamedVariable": {
+    "prefix": "env",
+    "body": "export const ${1:exportVariable} = ${2:localVariable}\n",
+    "description": "Export named variable in ES6 syntax"
+  },
+  "exportNamedFunction": {
+    "prefix": "fne",
+    "body": "export const ${1:functionName} = (${2:params}) => {\n\t$0\n}\n",
+    "description": "Export named function in ES6 syntax"
+  },
+  "constructor": {
+    "prefix": "con",
+    "body": "constructor(${1:params}) {\n\t${0}\n}",
+    "description": "Add default constructor in a class in ES6 syntax"
+  },
+  "method": {
+    "prefix": "met",
+    "body": "${1:methodName}(${2:params}) {\n\t${0}\n}",
+    "description": "Creates a method inside a class in ES6 syntax"
+  },
+  "propertyGet": {
+    "prefix": "get",
+    "body": "get ${1:propertyName}() {\n\treturn this.${0}\n}",
+    "description": "Creates a getter property inside a class in ES6 syntax"
+  },
+  "propertyset": {
+    "prefix": "set",
+    "body": "set ${1:propertyName}(${2:value}) {\n\t${0}\n}",
+    "description": "Creates a setter property inside a class in ES6 syntax"
+  },
+
+  "forEach": {
+    "prefix": "foreach",
+    "body": "${1:array}.forEach(${2:currentItem} => {\n\t${0}\n})",
+    "description": "Creates a forEach statement in ES6 syntax"
+  },
+  "forOf": {
+    "prefix": "fof",
+    "body": "for (const ${1:item} of ${2:object}) {\n\t${0}\n}",
+    "description": "Iterating over property names of iterable objects"
+  },
+  "forIn": {
+    "prefix": "fin",
+    "body": "for (const ${1:item} in ${2:object}) {\n\t${0}\n}",
+    "description": "Iterating over property values of iterable objects"
+  },
+  "namedFunction": {
+    "prefix": "fn",
+    "body": "const ${1:name} = (${2:params}) => {\n\t${3}\n}",
+    "description": "Creates a named function in ES6 syntax"
+  },
+  "destructingObject": {
+    "prefix": "dco",
+    "body": "const {${2:propertyName}} = ${1:objectToDestruct}",
+    "description": "Creates and assigns a local variable using object destructing"
+  },
+  "destructingArray": {
+    "prefix": "dar",
+    "body": "const [${2:propertyName}] = ${1:arrayToDestruct}",
+    "description": "Creates and assigns a local variable using array destructing"
+  },
+  "setInterval": {
+    "prefix": "setinterval",
+    "body": "setInterval(() => {\n\t${2}\n}, ${0:intervalInms})",
+    "description": "Executes the given function at specified intervals in ES6 syntax"
+  },
+  "setTimeOut": {
+    "prefix": "settimeout",
+    "body": "setTimeout(() => {\n\t${2}\n}, ${1:delayInms})",
+    "description": "Executes the given function after the specified delay in ES6 syntax"
+  },
+  "promise": {
+    "prefix": "rprom",
+    "body": "return new Promise((resolve, reject) => {\n\t${1}\n})",
+    "description": "Creates and returns a new Promise in the standard ES6 syntax"
+  },
+  "consoleLogLabeled": {
+    "prefix": "cll",
+    "body": "console.log('${0}', ${0})",
+    "description": "Displays data as a log."
+  },
+  "consoleTable": {
+    "prefix": "clt",
+    "body": "console.table(${1:object})",
+    "description": "Displays tabular data as a table."
+  },
+  "for loop": {
+    "prefix": "forl",
+    "body": "for (let ${1:i} = 0, ${2:len} = ${3:iterable}.length; ${1:i} < ${2:len}; ${1:i}++) {\n\t${0}\n}",
+    "description": "for loop"
+  },
+  "else if statement": {
+    "prefix": "ei",
+    "body": "else if (${1:condition}) {\n\t${0}\n}",
+    "description": "else if statement"
+  },
+  "while loop": {
+    "prefix": "while",
+    "body": "while (${1:condition}) {\n\t${0}\n}",
+    "description": "while loop"
+  },
+  "try/catch": {
+    "prefix": "trycatch",
+    "body": "try {\n\t${0}\n} catch (${1:err}) {\n\t\n}",
+    "description": "try/catch"
+  },
+  "switch case": {
+    "prefix": "switch",
+    "body": "switch (${1:expr}) {\n\tcase ${2:value}:\n\t\treturn $0\n\tdefault:\n\t\treturn\n}",
+    "description": "switch case"
+  },
+  "immediately-invoked function expression (IIFE)": {
+    "prefix": "iife",
+    "body": "((${1:arguments}) => {\n\t${0}\n})(${2})",
+    "description": "immediately-invoked function expression (IIFE)"
+  },
+  "map": {
+    "prefix": "map",
+    "body": "${1}.map((${2:item}) => {\n\t${0}\n})",
+    "description": "map"
+  },
+  "filter": {
+    "prefix": "filter",
+    "body": "${1}.filter(${2:item} => {\n\t${0}\n})",
+    "description": "filter"
+  },
+  "find": {
+    "prefix": "find",
+    "body": "${1}.find(${2:item} => {\n\t${0}\n})",
+    "description": "find"
+  },
+  "class (ES6)": {
+    "prefix": "class",
+    "body": "export class ${1:name} {\n\tconstructor(${2:arguments}) {\n\t\t${0}\n\t}\n}",
+    "description": "class (ES6)"
+  },
+	"Print a luis": {
+		"prefix": "slice",
+		"body": [
+			"import { createSlice } from '@reduxjs/toolkit'",
+			"import type { PayloadAction } from '@reduxjs/toolkit'",
+			"",
+			"interface ${1/(.*)/${1:/capitalize}/}State {",
+			"\tvalue: number",
+			"}",
+			"",
+			"const initialState: ${1/(.*)/${1:/capitalize}/}State = {",
+			"\tvalue: 0",
+			"}",
+			"",
+			"export const ${1:counter}Slice = createSlice({",
+			"\tname: '${1:counter}',",
+			"\tinitialState,",
+			"\treducers: {",
+			"\t\t${2:incrementByAmount}: (state, action: PayloadAction<${1/(.*)/${1:/capitalize}/}State>) => {",
+			"\t\t\tstate.value += action.payload.value$0",
+			"\t\t}",
+			"\t}",
+			"})",
+			"",
+			"export const { ${2:incrementByAmount} } = ${1:counter}Slice.actions"
+		],
+		"description": "Log output luis"
+	},
+  "Print a Pinia Store": {
+    "prefix": "pinia-store",
+    "body": [
+      "import { defineStore } from 'pinia'",
+      "import { computed, ref } from 'vue'",
+      "",
+      "export const use${1:Counter}Store = defineStore('${0:counter}', () => {",
+      "",
+      "\tconst count = ref<number>(0)",
+      "",
+      "\treturn {",
+      "\t\t//state properties",
+      "\t\tcount,",
+      "",
+      "\t\t//getters",
+      "\t\tsquareCount: computed(() => count.value * count.value),",
+      "",
+      "\t\t//actions",
+      "\t}",
+      "})"
+    ],
+    "description": "Create a store setup pinia"
+  },
+  "Print a Context Store": {
+    "prefix": "reactContext",
+    "body": [
+      "import { createContext } from 'react'",
+      "",
+      "export interface ContextProps {",
+      "\t${2:prop1}: ${0:boolean}",
+      "}",
+      "",
+      "export const ${1:name}Context = createContext({} as ContextProps)"
+    ]
+  },
+  "Print a Context Provider": {
+    "prefix": "reactProvider",
+    "body": [
+      "import { type FC, type ReactNode, useReducer } from 'react'",
+      "import { ${1:name}Context, ${1/(.*)/${1:/downcase}/}Reducer } from './'",
+      "",
+      "interface Props {",
+      "\tchildren: ReactNode",
+      "}",
+      "",
+      "export interface ${1:name}State {",
+      "\t${2:property}: ${3:boolean}",
+      "}",
+      "",
+      "const ${1:name}_INITIAL_STATE: ${1:name}State = {",
+      "\t${2:property}: ${4:false}",
+      "}",
+      "",
+      "export const ${1:name}Provider:FC<Props> = ({ children }) => {",
+      "\tconst [state, dispatch] = useReducer(${1/(.*)/${1:/downcase}/}Reducer, ${1:name}_INITIAL_STATE)",
+      "\t$0",
+      "\treturn (",
+      "\t\t<${1:name}Context value={{",
+      "\t\t\t...state",
+      "\t\t}}>",
+      "\t\t\t{children}",
+      "\t\t</${1:name}Context>",
+      "\t)",
+      "}"
+    ]
+  },
+  "Print a reducer": {
+    "prefix": "reactContextReducer",
+    "body": [
+      "import { ${1:name}State } from './'",
+      "",
+      "type ${1:name}ActionType =",
+      "| { type: '[${1:name}] - ${2:ActionName}' }",
+      "",
+      "export const ${1/(.*)/${1:/downcase}/}Reducer = (state: ${1:name}State, action: ${1:name}ActionType): ${1:name}State => {",
+      "\tswitch (action.type) {",
+      "\t\tcase '[${1:name}] - ${2:ActionName}':",
+      "\t\t\treturn {",
+      "\t\t\t\t...state,",
+      "\t\t\t\t$0",
+      "\t\t\t}",
+      "",
+      "\t\tdefault:",
+      "\t\t\treturn state",
+      "\t}",
+      "}"
+    ]
+  },
+  "Print a barrel context": {
+    "prefix": "reactContextBarrel",
+    "body": [
+      "",
+      "export * from './${1:name}Context'",
+      "export * from './${1:name}Provider'",
+      "export * from './${1/(.*)/${1:/downcase}/}Reducer'"
+    ]
+  }
+}

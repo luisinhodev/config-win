@@ -1,0 +1,50 @@
+{
+	"Print if else": {
+		"prefix": "ifelse",
+		"body": [
+      "if ${1:hash}:",
+      "\t$2",
+      "else:",
+      "\t$0"
+		],
+		"description": "Log output to if else"
+	},
+	"Print function": {
+		"prefix": "fn",
+		"body": [
+      "def ${1:function_name}(${2:params}):",
+      "\t$0"
+		],
+		"description": "Log output to function"
+	},
+	"Print print": {
+		"prefix": "pri",
+		"body": [
+      "print(${0:hash})"
+		],
+		"description": "Log output to print"
+	},
+	"Print printf": {
+		"prefix": "prif",
+		"body": [
+      "print(f'${0:hash}')"
+		],
+		"description": "Log output to print"
+	},
+	"Print from": {
+		"prefix": "from",
+		"body": [
+      "from ${1:hash} import ${0:hash}"
+		],
+		"description": "Log output to print"
+	},
+	"Print system clear": {
+		"prefix": "sys",
+		"body": [
+      "import os",
+      "os.system('clear')",
+      "$0"
+		],
+		"description": "Log output to import os"
+	}
+}
