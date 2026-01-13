@@ -1,0 +1,440 @@
+{
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "i",
+        "i"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    },
+    {
+      "before": [
+        "<C-e>"
+      ],
+      "commands": [
+        "cursorEnd"
+      ]
+    },
+    {
+      "before": [
+        "<C-a>"
+      ],
+      "commands": [
+        "cursorHome"
+      ]
+    },
+    {
+      "before": [
+        "<C-k>"
+      ],
+      "commands": [
+        "cursorUp"
+      ]
+    },
+    {
+      "before": [
+        "<C-j>"
+      ],
+      "commands": [
+        "cursorDown"
+      ]
+    },
+    {
+      "before": [
+        "<C-l>"
+      ],
+      "commands": [
+        "cursorRight"
+      ]
+    },
+    {
+      "before": [
+        "<C-h>"
+      ],
+      "commands": [
+        "cursorLeft"
+      ]
+    },
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // {
+    //   "before": ["<C-n>"],
+    //   "commands": [":nohl"]
+    // },
+    {
+      "before": [
+        "K"
+      ],
+      "commands": [
+        "editor.action.showDefinitionPreviewHover"
+      ],
+      // "silent": true
+    },
+    {
+      "before": [
+        "<leader>",
+        "r",
+        "n"
+      ], // rename variable, function, etc...
+      "commands": [
+        "editor.action.rename"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "w"
+      ], // save
+      "commands": [
+        ":w"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "j"
+      ], // moverse entre buffers
+      "commands": [
+        ":tabprev"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "l"
+      ], // moverse entre buffers
+      "commands": [
+        ":tabnext"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "x"
+      ], // cerrar buffer
+      "commands": [
+        ":tabclose"
+      ],
+    },
+    {
+      "before": [
+        "<leader>",
+        "t",
+        "o"
+      ], // cerrar buffers menos el actual
+      "commands": [
+        ":tabo"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "c",
+        "c"
+      ], // comentar linea
+      "commands": [
+        "editor.action.commentLine"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "c",
+        "space"
+      ], // descomentar linea
+      "commands": [
+        "editor.action.commentLine"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "s"
+      ], // toogle sidebar
+      "commands": [
+        "workbench.action.toggleSidebarVisibility"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "n"
+      ], // invocar al explorer
+      "commands": [
+        "workbench.view.explorer"
+      ]
+    },
+    {
+      "before": [
+        "<C-l>"
+      ], // ir al explorer
+      "commands": [
+        "workbench.explorer.fileView.focus"
+      ]
+    },
+    {
+      "before": [
+        "j"
+      ], // para navegar en un wrap down
+      "after": [
+        "g",
+        "j"
+      ]
+    },
+    {
+      "before": [
+        "k"
+      ], // para navegar en un wrap up
+      "after": [
+        "g",
+        "k"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "f",
+        "s"
+      ], // buscar files
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "f",
+        "t"
+      ], // focus a la terminal
+      "commands": [
+        "workbench.action.terminal.focus"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "k",
+        "t"
+      ], // Seleccionar theme
+      "commands": [
+        "workbench.action.selectTheme"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "p"
+      ], // mostrar los comandos
+      "commands": [
+        "workbench.action.showCommands"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "c",
+        "r"
+      ], // send request rest client
+      "commands": [
+        "rest-client.request"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "f"
+      ], // format document
+      "commands": [
+        "editor.action.formatDocument"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "m"
+      ], // find match selection
+      "commands": [
+        "editor.action.addSelectionToNextFindMatch"
+      ]
+    },
+  ],
+  "vim.normalModeKeyBindings": [
+    //
+  ],
+  "vim.visualModeKeyBindings": [
+    // editor.action.commentLine
+    {
+      "before": [
+        "<leader>",
+        "c",
+        "c"
+      ], // comentar linea modo visual
+      "commands": [
+        "editor.action.commentLine"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "c",
+        "space"
+      ], // descomentar linea
+      "commands": [
+        "editor.action.commentLine"
+      ]
+    },
+    {
+      "before": [
+        "<S-j>"
+      ], // mover lines arriba
+      "commands": [
+        "editor.action.moveLinesDownAction"
+      ]
+    },
+    {
+      "before": [
+        "<S-k>"
+      ], // mover lines abajo
+      "commands": [
+        "editor.action.moveLinesUpAction"
+      ]
+    },
+    {
+      "before": [
+        ">"
+      ], // indentar a la derecha
+      "commands": [
+        "editor.action.indentLines"
+      ]
+    },
+    {
+      "before": [
+        "<"
+      ], // indentar a la izquierda
+      "commands": [
+        "editor.action.outdentLines"
+      ]
+    },
+    {
+      "before": [
+        "n"
+      ], // selection next match
+      "commands": [
+        "editor.action.addSelectionToNextFindMatch"
+      ]
+    },
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": true,
+    // "<C-f>": true,
+    // "<C-p>": true,
+    // "<C-]>": false,
+    // "<C-[>": false,
+  },
+  "symbols.hidesExplorerArrows": false,
+  "workbench.iconTheme": "gruvbox-material-icons",
+  // "editor.rulers": [90, 120],
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.renderLineHighlight": "gutter",
+  "editor.fontLigatures": true,
+  "workbench.editor.labelFormat": "short",
+  "explorer.compactFolders": false,
+  "workbench.activityBar.location": "hidden",
+  "editor.minimap.enabled": false,
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "workbench.statusBar.visible": true,
+  "window.titleBarStyle": "custom",
+
+  "vscode_custom_css.imports": [
+      "file:///C:/Users/LUIS/Documents/vscode-gruvbox.css"
+  ],
+  "vscode_custom_css.policy": true,
+  // Configuración del título tipo Neovim
+  "window.title": "${activeEditorShort} ${separator} ${rootName}",
+  "window.commandCenter": false, // Limpia la barra de título superior
+
+  "workbench.layoutControl.enabled": false,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, .eslint*, prettier*, vite*, tsconfig*"
+  },
+  "editor.folding": false, // Elimina el espaciado
+  "editor.glyphMargin": false, // Elimina el margen izquierdo (Se usa principalmente para depurar)
+  "workbench.editor.tabActionCloseVisibility": false, // Remueve el icono para cerrar pestañas
+  "editor.suggestSelection": "first", // Preselecciona la primera opción de las sugerencias
+  "editor.hideCursorInOverviewRuler": true, // Oculta la marca del cursor en el editor
+  "workbench.sideBar.location": "right", // eplorador de archivos a la derecha
+  "files.trimFinalNewlines": true, // Remueve las líneas extras al final del archivo
+  "files.insertFinalNewline": true, // Inserta una línea al final del archivo
+  "files.trimTrailingWhitespace": true, // Remueve los espacios extras al final de una línea
+  "editor.cursorBlinking": "expand",
+  "window.menuBarVisibility": "toggle",
+  "editor.stickyTabStops": true,
+  "editor.tabSize": 2,
+  "editor.lineNumbers": "relative",
+  "terminal.integrated.fontFamily": "'FiraCode Nerd Font','CaskaydiaCove NF',monospace",
+  "editor.fontFamily": "'Dank Mono', 'Fira Code','CaskaydiaCove NF Book', 'Droid Sans Mono', 'monospace', monospace",
+  "editor.fontSize": 14.2,
+  "editor.colorDecorators": true,
+  "editor.wordWrap": "on",
+  "terminal.integrated.fontSize": 13.9,
+  "explorer.confirmDelete": false,
+  "[python]": {
+    "editor.tabSize": 4
+  },
+  "breadcrumbs.enabled": false,
+  "editor.stickyScroll.enabled": false,
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true
+  },
+  "editor.semanticHighlighting.enabled": true,
+  "workbench.colorTheme": "gruvboxConcoctis dark hard",
+  "editor.linkedEditing": true,
+  "extensions.autoCheckUpdates": false,
+  "extensions.autoUpdate": false,
+  "css.lint.unknownAtRules": "ignore",
+  "update.mode": "none",
+  // "typescript.tsdk": "C:/Users/Luisinho/scoop/apps/yarn/1.22.22/global/node_modules/typescript/lib"
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "emmet.includeLanguages": {
+    "postcss": "css"
+  },
+  "files.associations": {
+    "*.css": "css",
+    "css": "css"
+  },
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "workbench.colorCustomizations": {
+    "editorBracketHighlight.foreground1": "#e78a4e",
+    "editorBracketHighlight.foreground2": "#d8a657",
+    "editorBracketHighlight.foreground3": "#a9b665",
+    "editorBracketHighlight.foreground4": "#7daea3",
+    "editorBracketHighlight.foreground5": "#d3869b",
+    "editorBracketHighlight.foreground6": "#a89984",
+    "editorBracketHighlight.unexpectedBracket.foreground": "#ea6962",
+
+    "statusBar.background": "#303030",
+    "statusBar.foreground": "#ebdbb2",
+    "statusBar.noFolderBackground": "#303030",
+    "statusBarItem.hoverBackground": "#3c3836",
+    // Colores de la barra de título para que combine
+    "titleBar.activeBackground": "#303030",
+    "titleBar.activeForeground": "#ebdbb2",
+    "titleBar.border": "#303030"
+  },
+  "gruvboxConcoctis.useBoldFont": true,
+  "gruvbox-material-icons.activeIconPack": "react",
+}
