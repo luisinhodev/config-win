@@ -42,6 +42,7 @@ M.my_keybinds = {
 	{ key = "Enter", mods = "ALT", action = "QuickSelect" },
 	{ key = "/", mods = "ALT", action = act.Search("CurrentSelectionOrEmptyString") },
   { key = 'F11', mods = 'NONE',    action = act.ToggleFullScreen },
+  { key = 'z', mods = 'ALT', action = act.TogglePaneZoomState },
 }
 
 M.default_keybinds = {
