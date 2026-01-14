@@ -32,7 +32,7 @@ map("n", "<C-y>", "5<C-y>", default_opts)
 map("n", "<leader>q", ":q<CR>", default_opts)
 
 -- nvim-tree
-map("n", "<leader>n", ":Neotree toggle<CR>", default_opts)
+map("n", "<leader>tn", ":Neotree toggle<CR>", default_opts)
 
 -- cokeline
 map("n", "<leader>l", "<Plug>(cokeline-focus-next)", { silent = true })

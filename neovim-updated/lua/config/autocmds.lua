@@ -9,6 +9,15 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 	end,
 })
 
+
+-- nvim-ufo
+-- vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+--   callback = function()
+--     vim.opt_local.foldmethod = "expr"
+--     vim.opt_local.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+--   end,
+-- })
+
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "gitcommit", "markdown", "NeogitCommitMessage" },
 	callback = function()

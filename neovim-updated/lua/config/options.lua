@@ -38,7 +38,9 @@ opt.splitright = true
 opt.autowrite = true
 opt.list = true
 -- opt.listchars = "tab:\\ ,trail:•"
-opt.listchars = "tab:▏ ,trail:•"
+opt.listchars = "tab:│ ,trail:•"
+-- opt.listchars = "trail:•,extends:›,precedes:‹"
+
 opt.laststatus = 3
 opt.cmdheight = 1
 opt.updatetime = 100
@@ -65,10 +67,6 @@ g.astro_typescript = 'enable'
 
 -- Syntax highlight python: for spaces
 g.python_recommended_style = 0
---cmd[[
---  filetype plugin indent on
---  syntax on
---]]
 
 -- g.indentLine_char = '▏'       --|┊ set indentLine character
 

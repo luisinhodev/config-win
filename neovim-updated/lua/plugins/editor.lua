@@ -15,71 +15,40 @@ return {
 	-- Trouble
 	{
 		"folke/trouble.nvim",
-		dependencies = "nvim-tree/nvim-web-devicons",
+		opts = {}, -- for default options, refer to the configuration section for custom setup.
+		cmd = "Trouble",
 		keys = {
-			{ "<leader><leader>t", "<cmd>TroubleToggle<cr>", desc = "Trouble toggle" },
-			-- { "<leader><leader>tw", "<cmd>Trouble workspace_diagnostics<cr>",
-			-- desc = "Trouble toggle workspace" }
+			{
+				"<leader>tt",
+				"<cmd>Trouble diagnostics toggle<cr>",
+				desc = "Diagnostics (Trouble)",
+			},
+			-- {
+			-- 	"<leader>xX",
+			-- 	"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+			-- 	desc = "Buffer Diagnostics (Trouble)",
+			-- },
+			-- {
+			-- 	"<leader>cs",
+			-- 	"<cmd>Trouble symbols toggle focus=false<cr>",
+			-- 	desc = "Symbols (Trouble)",
+			-- },
+			-- {
+			-- 	"<leader>cl",
+			-- 	"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+			-- 	desc = "LSP Definitions / references / ... (Trouble)",
+			-- },
+			-- {
+			-- 	"<leader>xL",
+			-- 	"<cmd>Trouble loclist toggle<cr>",
+			-- 	desc = "Location List (Trouble)",
+			-- },
+			-- {
+			-- 	"<leader>xQ",
+			-- 	"<cmd>Trouble qflist toggle<cr>",
+			-- 	desc = "Quickfix List (Trouble)",
+			-- },
 		},
-		config = function()
-			require("trouble").setup({})
-		end,
-	},
-	-- indent hlchunk
-	{
-		"shellRaining/hlchunk.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			require("hlchunk").setup({
-				chunk = {
-					enable = true,
-					chars = {
-						horizontal_line = "─",
-						vertical_line = "│",
-						left_top = "╭",
-						left_bottom = "╰",
-						right_arrow = "❯",
-					},
-					style = "#6C865A",
-				},
-				line_num = {
-					enable = false,
-				},
-				indent = {
-					-- chars = { "▏" }, -- ▏▏ │ │, "│", "¦", "┆", "┊" }, -- more code can be found in https://unicodeplus.com/
-					--
-					-- style = {
-					-- 	"#3B3A3C",
-					-- },
-					enable = true,
-					-- use_treesitter = false,
-					chars = {
-						"│",
-					},
-					style = {
-						"#3B3A3C",
-					},
-				},
-				-- blank = {
-				--     enable = true,
-				--     chars = {
-				--         " ",
-				--     },
-				--     style = {
-				--         { bg = "#434437" },
-				--         { bg = "#2f4440" },
-				--         { bg = "#433054" },
-				--         { bg = "#284251" },
-				--     },
-				-- },
-				blank = {
-					enable = true,
-					-- style = {
-					-- 	"#3B3A3C",
-					-- },
-				},
-			})
-		end,
 	},
 	-- gitsigns
 	{
@@ -254,6 +223,38 @@ return {
 		ft = { "markdown" },
 		build = function()
 			vim.fn["mkdp#util#install"]()
+		end,
+	},
+	{
+		"kevinhwang91/nvim-ufo",
+		dependencies = { "kevinhwang91/promise-async" },
+		init = function()
+			-- use Neovim nightly branch
+			-- vim.o.fillchars = 'eob: ,fold: ,foldopen:,foldsep: ,foldinner: ,foldclose:'
+			vim.o.foldenable = true
+			vim.o.foldlevel = 99
+			vim.o.foldlevelstart = 99
+			vim.o.foldmethod = "expr"
+			vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+			vim.o.foldtext = ""
+			vim.opt.foldcolumn = "0"
+			vim.opt.fillchars:append({ fold = " " })
+
+			-- vim.opt.fillchars = {
+			--   eob = " ",
+			--   fold = " ",
+			--   foldopen = "",
+			--   foldsep = " ",
+			--   -- foldinner = " ",
+			--   foldclose = "",
+			-- }
+		end,
+		config = function()
+			require("ufo").setup({
+				provider_selector = function(bufnr, filetype, buftype)
+					return { "treesitter", "indent" } -- Usa treesitter como fuente principal
+				end,
+			})
 		end,
 	},
 }
