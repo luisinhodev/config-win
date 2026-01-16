@@ -22,30 +22,30 @@ function .... { Set-Location ../../.. }
 
 function gs { git status }
 function ga { git add . }
-function gp { git push }
-function gc { param($msg) git commit -m $msg }
 
-# Autosuggestions
+if (Get-Alias gp -ErrorAction SilentlyContinue) { Remove-Item Alias:gp -Force }
+function gp { git push }
+# function gc { param($msg) git commit -m $msg }
+
+if (Get-Alias gc -ErrorAction SilentlyContinue) { Remove-Item Alias:gc -Force }
+function gc {
+    param([string]$msg)
+    git commit -m "$msg"
+}
+
+# 1. Importar el módulo (PSReadLine maneja los atajos y predicciones)
 Import-Module PSReadLine
 
+# 2. Activar el modo Emacs para usar Ctrl+A, Ctrl+E, etc. (como en Linux)
+Set-PSReadLineOption -EditMode Emacs
+
+# 3. Configurar la fuente de las predicciones (Historial de comandos)
 Set-PSReadLineOption -PredictionSource History
 
-Set-PSReadLineOption -HistorySearchCursorMovesToEnd
-Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
-Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
-
-Set-PSReadLineOption -Colors @{ InlinePrediction = '#875f5f'}
-# Set-PSReadLineOption -Colors @{ InlinePrediction = "`e[38;5;244m" }
-
-
-Set-PSReadLineKeyHandler -Chord "Ctrl+f" -Function ForwardWord
-
-Set-PSReadLineKeyHandler -Key Alt+d -Function ShellKillWord
-Set-PSReadLineKeyHandler -Key Alt+Backspace -Function ShellBackwardKillWord
-Set-PSReadLineKeyHandler -Key Alt+b -Function ShellBackwardWord
-Set-PSReadLineKeyHandler -Key Alt+f -Function ShellForwardWord
-Set-PSReadLineKeyHandler -Key Alt+B -Function SelectShellBackwardWord
-Set-PSReadLineKeyHandler -Key Alt+F -Function SelectShellForwardWord
+# 4. Cambiar el color de la sugerencia (Tu línea corregida con ANSI)
+# Nota: En versiones modernas, es mejor usar secuencias ANSI para mayor compatibilidad
+Set-PSReadLineOption -Colors @{ InlinePrediction = '#5f5f5f' }
+# Set-PSReadLineOption -Colors @{ InlinePrediction = '#875f5f'}
 
 # Import the Chocolatey Profile that contains the necessary code to enable
 # tab-completions to function for `choco`.
