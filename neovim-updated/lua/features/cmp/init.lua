@@ -7,16 +7,10 @@ local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
--- cmp.setup.filetype('vue', {
---   completion = {
---     autocomplete = false,
---   },
--- })
-
 cmp.setup({
-  -- completion = {
-  --   autocomplete = false
-  -- },
+	-- completion = {
+	--   autocomplete = false
+	-- },
 	mapping = {
 		["<C-d>"] = cmp.mapping.scroll_docs(-2),
 		["<C-f>"] = cmp.mapping.scroll_docs(2),

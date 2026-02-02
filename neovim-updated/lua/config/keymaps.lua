@@ -32,7 +32,12 @@ map("n", "<C-y>", "5<C-y>", default_opts)
 map("n", "<leader>q", ":q<CR>", default_opts)
 
 -- nvim-tree
-map("n", "<leader>tn", ":Neotree toggle<CR>", default_opts)
+map("n", "<leader>tn", ":Neotree reveal<CR>", default_opts)
+
+-- Mapear Ctrl + . para acciones de código (importaciones, correcciones, etc.)
+vim.keymap.set({ "n", "i" }, "<leader>.", function()
+	vim.lsp.buf.code_action()
+end, { desc = "Code Actions" })
 
 -- cokeline
 map("n", "<leader>l", "<Plug>(cokeline-focus-next)", { silent = true })
@@ -45,18 +50,8 @@ map("n", "<leader>to", ":bufdo bd<cr>", default_opts) --close all bufers
 map("n", "<leader>x", ":bdelete<CR>", default_opts)
 
 for i = 1, 9 do
-  map(
-    "n",
-    ("<leader>%s"):format(i),
-    ("<Plug>(cokeline-focus-%s)"):format(i),
-    { silent = true }
-  )
-  map(
-    "n",
-    ("<Leader><leader>%s"):format(i),
-    ("<Plug>(cokeline-switch-%s)"):format(i),
-    { silent = true }
-  )
+	map("n", ("<leader>%s"):format(i), ("<Plug>(cokeline-focus-%s)"):format(i), { silent = true })
+	map("n", ("<Leader><leader>%s"):format(i), ("<Plug>(cokeline-switch-%s)"):format(i), { silent = true })
 end
 
 -- move around splits using Ctrl + {h,j,k,l}
@@ -108,14 +103,14 @@ map("n", "<leader>ts", ":Telescope symbols<CR>", default_opts)
 -- map("t", "<Esc><Esc>", "<C-\\><C-n>")
 
 -- ToggleTerm
-  -- map("n","<C-n>","<cmd>lua _NODE_TOGGLE()<cr>", {})
-  -- map("n","<C-h>","<cmd>lua _HTOP_TOGGLE()<cr>", {})
-  -- map("n","<C-p>","<cmd>lua _PYTHON_TOGGLE()<cr>", {})
-  map("n","<C-t>","<cmd>ToggleTerm direction=float<cr>", {})
-  map("t","<C-t>","<cmd>ToggleTerm direction=float<cr>", {})
+-- map("n","<C-n>","<cmd>lua _NODE_TOGGLE()<cr>", {})
+-- map("n","<C-h>","<cmd>lua _HTOP_TOGGLE()<cr>", {})
+-- map("n","<C-p>","<cmd>lua _PYTHON_TOGGLE()<cr>", {})
+map("n", "<C-t>", "<cmd>ToggleTerm direction=float<cr>", {})
+map("t", "<C-t>", "<cmd>ToggleTerm direction=float<cr>", {})
 
-  map("n","<leader>ht","<cmd>ToggleTerm size=10 direction=horizontal<cr>", {})
-  map("n","<leader>vt","<cmd>ToggleTerm size=30 direction=vertical<cr>", {})
+map("n", "<leader>ht", "<cmd>ToggleTerm size=10 direction=horizontal<cr>", {})
+map("n", "<leader>vt", "<cmd>ToggleTerm size=30 direction=vertical<cr>", {})
 
 -- quick env file edit
 map("n", "<leader>ee", ":vsp .env<CR>", { desc = "Open .env file in a vertical split" })

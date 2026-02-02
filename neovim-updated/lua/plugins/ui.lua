@@ -1,4 +1,3 @@
-
 return {
 	-- neo-tree
 	{
@@ -22,20 +21,25 @@ return {
 						end,
 					},
 				},
+				filesystem = {
+					follow_current_file = {
+						enabled = true, -- El cursor seguirá al archivo actual
+					},
+				},
 				popup_border_style = "rounded", --rounded
 				window = {
 					position = "float",
 					width = 30,
-    --       mappings = {
-    --         ["<leader>ll"] = function (state)
-    --           local node = state.tree:get_node()
-    --           if require("neo-tree.utils").is_expandable(node) then
-    --             state.commands["toggle_directory"](state)
-    --           else
-    --             state.commands["close_node"](state)
-    --           end
-    --         end,
-    --       }
+					--       mappings = {
+					--         ["<leader>ll"] = function (state)
+					--           local node = state.tree:get_node()
+					--           if require("neo-tree.utils").is_expandable(node) then
+					--             state.commands["toggle_directory"](state)
+					--           else
+					--             state.commands["close_node"](state)
+					--           end
+					--         end,
+					--       }
 				},
 				default_component_configs = {
 					indent = {},

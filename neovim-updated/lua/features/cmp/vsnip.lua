@@ -1,5 +1,7 @@
 --" location to store vsnip files
-vim.g.vsnip_snippet_dir = vim.fn.expand('~/.config/nvim/extra/snippets')
+-- vim.g.vsnip_snippet_dir = vim.fn.expand('~/.config/nvim/extra/snippets')
+
+vim.g.vsnip_snippet_dir = vim.fn.expand("$LOCALAPPDATA/nvim/extra/snippets")
 
 -- keymaps for vsnip
 vim.cmd([[
@@ -8,9 +10,3 @@ vim.cmd([[
   imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
   smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
 ]])
-
-
-
-
-
-
